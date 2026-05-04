@@ -28,18 +28,7 @@ The README template comes with text templates for each section (after each comme
 5. In a separate paragraph, highlight the reproducibility aspect of the method providing details or references to the resources used by the method, the data used in building the pre-trained modules etc.
 6. It should also discuss the decisions and parameters controlling the behavior of the method.
 -->
-METHOD allows to do XXX.
-
-METHOD takes XXX in XXX format as input and provides XXX in XXX format as output.
-Alternatively, METHOD can also be configured to XXX.
-METHOD works with XXX data.
-METHOD can use any [XXX-compatible API](https://example.com).
-The output of METHOD is compatible with [XXX](https://example.com).
-
-METHOD placed Xth in the [XXX](https:/example.com) competition on XXX.
-METHOD is much faster than other methods.
-METHOD runs quickly on standard hardware.
-METHOD requires a GPU.
+{{ cookiecutter.description }}
 
 ## Use Cases
 <!--
@@ -47,12 +36,7 @@ METHOD requires a GPU.
 2. Each use case should start with a description of a task and then detail how one can use the method to assist in the task.
 3. Each use case may list publications in which the use case occurs (e.g., in APA7 style, https://apastyle.apa.org/style-grammar-guidelines/references/examples).
 -->
-- Doing XXX. One can use METHOD by doing XXX to achieve XXX.
-
-  Example publications that illustrate this use case:
-
-  - XXX.
-  - XXX.
+{{ cookiecutter.usecase }}
 
 ## Input Data
 <!--
