@@ -1,6 +1,8 @@
 {
   "project_name": "Methods Hub method name",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+  "description": "Describe your method in few lines",
+  "usecase": "Write a usecase for your method",
   "author_firstname": "",
   "author_lastname": "",
   "author_orcid": "Please provide your ORCID:",
