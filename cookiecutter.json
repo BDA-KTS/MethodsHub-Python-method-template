@@ -1,18 +1,8 @@
 {
   "project_name": "Methods Hub method name",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-  "description": "METHOD allows to do XXX.
-
-METHOD takes XXX in XXX format as input and provides XXX in XXX format as output.
-Alternatively, METHOD can also be configured to XXX.
-METHOD works with XXX data.
-METHOD can use any [XXX-compatible API](https://example.com).
-The output of METHOD is compatible with [XXX](https://example.com).
-
-METHOD placed Xth in the [XXX](https:/example.com) competition on XXX.
-METHOD is much faster than other methods.
-METHOD runs quickly on standard hardware.
-METHOD requires a GPU.",
+  "description": "METHOD allows to do XXX. \n METHOD takes XXX in XXX format as input and provides XXX in XXX format as output.
+\nAlternatively, METHOD can also be configured to XXX.\nMETHOD works with XXX data.\nMETHOD can use any [XXX-compatible API](https://example.com).\nThe output of METHOD is compatible with [XXX](https://example.com).\nMETHOD placed Xth in the [XXX](https:/example.com) competition on XXX.\nMETHOD is much faster than other methods.\nMETHOD runs quickly on standard hardware.\nMETHOD requires a GPU.",
   "usecase": "Write a usecase for your method",
   "author_firstname": "",
   "author_lastname": "",
