@@ -8,7 +8,7 @@ import os
 
 print(os.getcwd())
 print(os.listdir("."))
-print(os.getcwd() + "/binder/" + os.listdir("."))
+print(os.listdir("binder/.."))
 
 # ----------------------
 # PIP install from requirements.txt
