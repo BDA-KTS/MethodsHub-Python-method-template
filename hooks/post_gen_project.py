@@ -2,7 +2,7 @@ import subprocess
 import sys
 
 env_manager = "{{ cookiecutter.env_manager }}"
-method_name = "{{ cookiecutter.method_name }}"
+method_title = "{{ cookiecutter.method_title }}"
 method_slug = "{{ cookiecutter.method_slug }}"
 
 # ----------------------
