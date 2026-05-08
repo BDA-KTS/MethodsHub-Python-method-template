@@ -19,7 +19,7 @@ if env_manager == "pip":
             "pip",
             "install",
             "-r",
-            f"{method_slug}/binder/requirements.txt"
+            "" + method_slug + "/binder/requirements.txt"
         ],
         check=True
     )
@@ -41,7 +41,7 @@ elif env_manager == "conda":
             "-n",
             project_slug,
             "-f",
-            f"{project_slug}/binder/environment.yml",
+            "" + project_slug + "/binder/environment.yml",
             "--prune"
         ],
         check=True
