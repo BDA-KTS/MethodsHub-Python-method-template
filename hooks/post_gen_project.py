@@ -2,14 +2,15 @@ import subprocess
 import sys
 
 env_manager = "{{ cookiecutter.env_manager }}"
-project_name = "{{ cookiecutter.project_name }}"
+method_name = "{{ cookiecutter.method_name }}"
+method_slug = "{{ cookiecutter.method_slug }}"
 
 # ----------------------
 # PIP install from requirements.txt
 # ----------------------
 if env_manager == "pip":
 
-    print("Installing dependencies from requirements.txt...")
+    print("Installing dependencies for {method_name} from requirements.txt...")
 
     subprocess.run(
         [
@@ -18,7 +19,7 @@ if env_manager == "pip":
             "pip",
             "install",
             "-r",
-            "env/requirements.txt"
+            f"{method_slug}/binder/requirements.txt"
         ],
         check=True
     )
@@ -38,9 +39,9 @@ elif env_manager == "conda":
             "env",
             "update",
             "-n",
-            project_name,
+            project_slug,
             "-f",
-            "env/environment.yml",
+            f"{project_slug}/binder/environment.yml",
             "--prune"
         ],
         check=True
