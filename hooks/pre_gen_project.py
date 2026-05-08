@@ -49,3 +49,9 @@ elif env_manager == "conda":
     )
 
     print(f"Conda environment named {{ cookiecutter.method_slug }} is created for the {{ cookiecutter.method_title }}")
+
+# -------------------------
+# None
+# -------------------------
+elif env_manager == "none":
+    print("For the selected (none) option, create virtual environment and install dependencies manually for {{ cookiecutter.method_title }}.")
