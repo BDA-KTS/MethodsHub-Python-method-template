@@ -19,7 +19,7 @@ if env_manager == "pip":
             "pip",
             "install",
             "-r",
-            "\\{{ cookiecutter.method_slug \\}}/binder/requirements.txt"
+            "text = "{{ cookiecutter.method_slug }}/binder/requirements.txt"
         ],
         check=True
     )
