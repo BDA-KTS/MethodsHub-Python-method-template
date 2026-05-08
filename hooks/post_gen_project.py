@@ -7,6 +7,7 @@ method_slug = "{{ cookiecutter.method_slug }}"
 import os
 
 print(os.getcwd())
+print(os.listdir("."))
 
 # ----------------------
 # PIP install from requirements.txt
