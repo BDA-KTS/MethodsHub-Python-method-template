@@ -12,12 +12,12 @@ if env_manager not in ["pip", "conda", "none"]:
 
 # Optional guidance / enforcement logic
 if env_manager == "conda":
-    print("\n Conda is deploying virtual environment with pre-installations...")
+    print("\n Conda is deploying virtual environment for {{ cookiecutter.method_title }}with pre-installations...")
 
 elif env_manager == "pip":
-    print("\n Python virtual environment deploying with pre-installations...")
+    print("\n Python virtual environment deploying for {{ cookiecutter.method_title }}with pre-installations...")
 elif env_manager == "none":
-  print("\n Virtual working environment to be created and deployed manually...")
+  print("\n Virtual working environment to be created and deployed for {{ cookiecutter.method_title }} manually...")
 
 # -------------------------
 # PIP / venv setup
@@ -29,14 +29,12 @@ if env_manager == "pip":
         check=True
     )
 
-    print("Virtual environment created (.venv)")
+    print("Virtual environment created (.venv) created for {{ cookiecutter.method_title }}")
 
 # -------------------------
 # CONDA setup
 # -------------------------
 elif env_manager == "conda":
-
-    print("Creating conda environment...")
 
     subprocess.run(
         [
@@ -44,10 +42,10 @@ elif env_manager == "conda":
             "create",
             "-y",
             "-n",
-            project_name,
+            method_slug,
             "python"
         ],
         check=True
     )
 
-    print(f"Conda environment '{project_name}' created")
+    print(f"Conda environment named {{ cookiecutter.method_slug }} is created for the {{ cookiecutter.method_title }}")
