@@ -3,7 +3,7 @@ import sys
 
 env_manager = "{{ cookiecutter.env_manager }}"
 method_slug = "{{ cookiecutter.method_slug }}"
-dir = "{{ cookiecutter.method_slug }}"
+dir = '{{ "{{ cookiecutter.method_slug }}" }}'
 
 
 # ----------------------
