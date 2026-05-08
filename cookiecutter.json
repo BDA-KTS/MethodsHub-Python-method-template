@@ -1,12 +1,10 @@
 {
   "project_name": "Methods Hub method name",
   "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
-  "description": "METHOD allows to do XXX. \n METHOD takes XXX in XXX format as input and provides XXX in XXX format as output.\nAlternatively, METHOD can also be configured to XXX.\nMETHOD works with XXX data.\nMETHOD can use any [XXX-compatible API](https://example.com).\nThe output of METHOD is compatible with [XXX](https://example.com).\nMETHOD placed Xth in the [XXX](https:/example.com) competition on XXX.\nMETHOD is much faster than other methods.\nMETHOD runs quickly on standard hardware.\nMETHOD requires a GPU.",
-  "usecase": "Doing XXX.\nOne can use METHOD by doing XXX to achieve XXX.\n\nExample publications that illustrate this use case:",
-  "author_firstname": "",
-  "author_lastname": "",
-  "author_orcid": "Please provide your ORCID:",
-  "author_github_handle": "https://github.com/XXX",
-  "author_email": "",
+  "description": "{{ cookiecutter.project_slug }} allows to do XXX. \n {{ cookiecutter.project_slug }} takes XXX in XXX format as input and provides XXX in XXX format as output.\nAlternatively, {{ cookiecutter.project_slug }} can also be configured to XXX.\n{{ cookiecutter.project_slug }} works with XXX data.\n{{ cookiecutter.project_slug }} can use any [XXX-compatible API](https://example.com).\nThe output of {{ cookiecutter.project_slug }} is compatible with [XXX](https://example.com).\n{{ cookiecutter.project_slug }} placed Xth in the [XXX](https:/example.com) competition on XXX.\n{{ cookiecutter.project_slug }} is much faster than other methods.\n{{ cookiecutter.project_slug }} runs quickly on standard hardware.\n{{cookiecutter.project_slug}} requires a GPU.",
+  "usecase": "Doing XXX.\nOne can use {{ cookiecutter.project_slug }} by doing XXX to achieve XXX.\n\nExample publications that illustrate this use case:",
+  "authors_info": "firstname, lastname, ORCID|firstname, lastname, ORCID|...",
+  "github_handle": "https://github.com/XXX",
+  "contact_email": "",
   "date": "yyyy-mm-dd"
 }
