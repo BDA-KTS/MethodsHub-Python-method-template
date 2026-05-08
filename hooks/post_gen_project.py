@@ -17,7 +17,7 @@ if env_manager == "pip":
             "pip",
             "install",
             "-r",
-            "/binder/requirements.txt"
+            "requirements.txt"
         ],
         check=True
     )
