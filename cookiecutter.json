@@ -7,5 +7,5 @@
   "github_handle": "https://github.com/XXX",
   "contact_email": "",
   "release_date": "today(yyyy-mm-dd)",
-  "env_manager": ["Python", "Conda", "None"]
+  "env_manager": ["pip", "conda", "none"]
 }
