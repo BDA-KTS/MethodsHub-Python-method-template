@@ -6,6 +6,6 @@
   "authors_info": "firstname, lastname, ORCID|firstname, lastname, ORCID|...",
   "github_handle": "https://github.com/XXX",
   "contact_email": "",
-  "release_date": "today(yyyy-mm-dd)"
-  "programming_language": ["python", "R"]
+  "release_date": "today(yyyy-mm-dd)",
+  "env_manager": ["Python", "Conda", "None"]
 }
