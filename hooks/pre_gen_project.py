@@ -42,7 +42,7 @@ elif env_manager == "conda":
             "create",
             "-y",
             "-n",
-            method_slug,
+            {{ cookiecutter.method_slug }},
             "python"
         ],
         check=True
