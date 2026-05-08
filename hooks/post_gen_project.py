@@ -4,12 +4,6 @@ import sys
 env_manager = "{{ cookiecutter.env_manager }}"
 method_slug = "{{ cookiecutter.method_slug }}"
 
-import os
-
-print(os.getcwd())
-print(os.listdir("."))
-print(os.listdir("binder/"))
-
 # ----------------------
 # PIP install from requirements.txt
 # ----------------------
@@ -23,7 +17,7 @@ if env_manager == "pip":
             "pip",
             "install",
             "-r",
-            "requirements.txt"
+            "binder/requirements.txt"
         ],
         check=True
     )
