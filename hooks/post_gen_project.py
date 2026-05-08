@@ -8,6 +8,7 @@ import os
 
 print(os.getcwd())
 print(os.listdir("."))
+print(os.getcwd()/binder/os.listdir("."))
 
 # ----------------------
 # PIP install from requirements.txt
@@ -44,7 +45,7 @@ elif env_manager == "conda":
             "-n",
             project_slug,
             "-f",
-            dir + "/binder/environment.yml",
+            dir + "binder/environment.yml",
             "--prune"
         ],
         check=True
