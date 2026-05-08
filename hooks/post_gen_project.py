@@ -39,7 +39,7 @@ elif env_manager == "conda":
             "-n",
             project_slug,
             "-f",
-            dir + "binder/environment.yml",
+            "binder/environment.yml",
             "--prune"
         ],
         check=True
