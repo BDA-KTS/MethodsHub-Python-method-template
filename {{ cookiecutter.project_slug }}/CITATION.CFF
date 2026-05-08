@@ -8,7 +8,7 @@ author:
 - last_name: {{ parts[1] }}
 - ORCID: {{ parts[2] }}
 {% endfor %}
-title: {{ cookiecutter.project_name }}
+title: {{ cookiecutter.project_title }}
 version: 1.0
 identifiers:
   - type: doi
