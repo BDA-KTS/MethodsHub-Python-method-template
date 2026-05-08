@@ -1,9 +1,13 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
-authors:
-  - family-names: {{ cookiecutter.author_firstname }}
-    given-names: {{ cookiecutter.author_lastname }}
-    orcid: {{ cookiecutter.author_orcid }}
+
+{% for author in cookiecutter.authors_info.split("|") %}
+{% set parts = author.split(",") %}
+author:
+- first_name: {{ parts[0] }}
+- last_name: {{ parts[1] }}
+- ORCID: {{ parts[2] }}
+{% endfor %}
 title: {{ cookiecutter.project_name }}
 version: 1.0
 identifiers:
