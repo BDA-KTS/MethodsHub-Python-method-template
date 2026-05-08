@@ -4,6 +4,10 @@ import sys
 env_manager = "{{ cookiecutter.env_manager }}"
 method_slug = "{{ cookiecutter.method_slug }}"
 
+import os
+
+print(os.getcwd())
+
 # ----------------------
 # PIP install from requirements.txt
 # ----------------------
