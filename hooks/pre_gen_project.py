@@ -15,7 +15,7 @@ if env_manager == "conda":
     print("\n Conda is deploying virtual environment with pre-installations...")
 
 elif env_manager == "pip":
-    print("\n Cython virtual environment deploying with pre-installations...")
+    print("\n Python virtual environment deploying with pre-installations...")
 elif env_manager == "none":
   print("\n Virtual working environment to be created and deployed manually...")
 
@@ -23,8 +23,6 @@ elif env_manager == "none":
 # PIP / venv setup
 # -------------------------
 if env_manager == "pip":
-
-    print("Creating virtual environment using venv...")
 
     subprocess.run(
         [sys.executable, "-m", "venv", ".venv"],
