@@ -10,7 +10,7 @@ method_slug = "{{ cookiecutter.method_slug }}"
 # ----------------------
 if env_manager == "pip":
 
-    print("Installing dependencies for {method_name} from requirements.txt...")
+    print("Installing dependencies for {method_title} from requirements.txt...")
 
     subprocess.run(
         [
@@ -19,7 +19,7 @@ if env_manager == "pip":
             "pip",
             "install",
             "-r",
-            "text = "{{ cookiecutter.method_slug }}/binder/requirements.txt"
+            "{{ cookiecutter.method_slug }}/binder/requirements.txt"
         ],
         check=True
     )
@@ -41,7 +41,7 @@ elif env_manager == "conda":
             "-n",
             project_slug,
             "-f",
-            "" + project_slug + "/binder/environment.yml",
+            "{{ cookiecutter.method_slug }}/binder/environment.yml",
             "--prune"
         ],
         check=True
