@@ -13,4 +13,4 @@ version: 1.0
 identifiers:
   - type: doi
     value: 
-date-released: {{ cookiecutter.date }}
+date-released: {{ cookiecutter.release_date }}
