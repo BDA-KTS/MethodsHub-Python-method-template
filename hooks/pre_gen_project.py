@@ -33,7 +33,7 @@ if env_manager == "pip":
     # Activate environment in a new shell
     if os.name == "nt":  # Windows
         subprocess.run(
-            r".venv\Scripts\activate.bat",
+            r".venv\Scripts\activate",
             shell=True
         )
     else:  # Linux/macOS
@@ -42,7 +42,7 @@ if env_manager == "pip":
             shell=True,
             executable="/bin/bash"
         )
-        print("Virtual environment created (.venv) created for {{ cookiecutter.method_title }}")
+    print("Virtual environment created (.venv) created for {{ cookiecutter.method_title }}")
 
 # -------------------------
 # CONDA setup
