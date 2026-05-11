@@ -14,19 +14,13 @@ The methods Hub method template is built using [cookiecutter.io](https://www.coo
 
 ## How to Use
 
-- With Python virtual environment
-  - ```python -m venv .methodenv```
-  - ```cd .methodenv```
-  - ```Scripts\activate```
+- With pip
   - ```python3 -m pip install --user cookiecutter```
-  - test cookiecutter installation ```cookiecutter```
-  - Execute the git clone path with the cookiecutter ```cookiecutter https://github.com/BDA-KTS/MethodsHub-method-template.git```
 - With Anaconda
-  - ```conda create -m methodenv```
-  - ```conda activate methodenv```
   - ```conda install cookiecutter```
-  - test cookiecutter installation ```cookiecutter```
-  - Execute the git clone path with the cookiecutter ```cookiecutter https://github.com/BDA-KTS/MethodsHub-method-template.git```
+- test cookiecutter installation ```cookiecutter```
+- Execute the git clone path with the cookiecutter ```cookiecutter https://github.com/BDA-KTS/MethodsHub-method-template.git```
+
 *It internally uses git clone to clone the template repository locally while setting specific configurations for the method.*
   - **Note:** You will be asked for the method configurations e.g.., *method_title*, *method_slug* (if name has spaces) etc.
 
