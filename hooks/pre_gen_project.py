@@ -28,7 +28,18 @@ if env_manager == "pip":
         [sys.executable, "-m", "venv", ".venv"],
         check=True
     )
-
+# Activate environment in a new shell
+if os.name == "nt":  # Windows
+    subprocess.run(
+        r".venv\Scripts\activate.bat",
+        shell=True
+    )
+else:  # Linux/macOS
+    subprocess.run(
+        "source .venv/bin/activate",
+        shell=True,
+        executable="/bin/bash"
+    )
     print("Virtual environment created (.venv) created for {{ cookiecutter.method_title }}")
 
 # -------------------------
