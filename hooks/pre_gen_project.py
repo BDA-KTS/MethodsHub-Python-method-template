@@ -1,4 +1,5 @@
 import sys
+import os
 import subprocess
 
 env_manager = "{{ cookiecutter.env_manager }}"
