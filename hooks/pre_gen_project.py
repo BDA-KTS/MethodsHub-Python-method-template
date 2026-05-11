@@ -30,19 +30,22 @@ if env_manager == "pip":
         [sys.executable, "-m", "venv", ".venv"],
         check=True
     )
+    print("Virtual environment created (.venv) created for {{ cookiecutter.method_title }}")
+
     # Activate environment in a new shell
     if os.name == "nt":  # Windows
         subprocess.run(
             r".venv\Scripts\activate",
             shell=True
         )
+        print(".venv activated on Windows")
     else:  # Linux/macOS
         subprocess.run(
             "source .venv/bin/activate",
             shell=True,
             executable="/bin/bash"
         )
-    print("Virtual environment created (.venv) created for {{ cookiecutter.method_title }}")
+        print(".venv activated on Linux/macOS")
 
 # -------------------------
 # CONDA setup
