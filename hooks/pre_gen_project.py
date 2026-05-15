@@ -37,9 +37,9 @@ if env_manager == "pip":
         venv_python = Path(".venv/Scripts/python.exe")
     else:
         venv_python = Path(".venv/bin/python")
-
+    print('Virual environment activated.')
     subprocess.run(
-        [str(venv_python), "-m", "pip", "install", "-r", "requirements.txt"],
+        [str(venv_python), "-m", "pip", "install", "-r", "binder/requirements.txt"],
         check=True
     )
 
