@@ -33,17 +33,6 @@ if env_manager == "pip":
     )
     print("Virtual environment created (.venv) created for {{ cookiecutter.method_title }}")
 
-    if os.name == "nt":
-        activate_cmd = r".venv\Scripts\activate"
-    else:
-        activate_cmd = "source .venv/bin/activate"
-
-    print("\nActivate the virtual environment by running:\n")
-    print(f"    {activate_cmd}\n")
-
-    # Wait for user confirmation
-    input("Press ENTER after you have activated the virtual environment...")
-
 # -------------------------
 # CONDA setup
 # -------------------------
