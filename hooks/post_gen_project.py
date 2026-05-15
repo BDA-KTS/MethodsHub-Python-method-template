@@ -13,7 +13,7 @@ if env_manager == "pip":
     venv_path = Path(".venv").resolve()
 
     if os.name == "nt":
-        #activate = venv_path / "Scripts" / "activate.bat"
+        activate = venv_path / "Scripts" / "activate.bat"
         #subprocess.Popen(f'start cmd.exe /k "{activate}"', shell=True)
 
         cmd = f'call "{activate}" && pip install -r binder/requirements.txt && cmd /k'
