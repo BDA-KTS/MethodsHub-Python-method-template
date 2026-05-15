@@ -8,7 +8,7 @@ method_slug = "{{ cookiecutter.method_slug }}"
 # PIP install from requirements.txt
 # ----------------------
 if env_manager == "pip":
-
+    
     print("Installing dependencies for {{ cookiecutter.method_title }} from requirements.txt...")
     subprocess.run(
         [
