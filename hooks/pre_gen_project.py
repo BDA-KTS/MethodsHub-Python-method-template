@@ -35,8 +35,17 @@ if env_manager == "pip":
 
     if os.name == "nt":
         venv_python = Path(".venv/Scripts/python.exe")
+        subprocess.run(
+            r'cmd.exe /k ".venv\Scripts\activate.bat"',
+            shell=True
+        )
+
     else:
         venv_python = Path(".venv/bin/python")
+        subprocess.run(
+            'bash -c "source .venv/bin/activate && exec bash"',
+            shell=True
+        )
     print('Virual environment activated.')
     
 
