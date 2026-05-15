@@ -22,7 +22,8 @@ if env_manager == "pip":
         check=True
     )
 
-    print("Pip dependencies installed.")
+    print("Pip dependencies are installed in {{cookiecutter.method_title}}.venv environment.")
+    print("Finally, execute the following command to open the virtual environment in the current shell window.\nFor Windows: {{cookiecutter.method_slug}}\.venv\Scripts\activate.bat\nForLinux or MacOS: source {{ cookiecutter.method_slug }}/.venv/bin/activate "
 
 # ----------------------
 # CONDA install from environment.yml
