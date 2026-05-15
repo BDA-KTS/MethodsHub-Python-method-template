@@ -13,10 +13,10 @@ if env_manager == "pip":
     venv_path = Path(".venv").resolve()
 
     if os.name == "nt":
-        activate = venv_path / "Scripts" / "activate.bat"
-        subprocess.Popen(f'start cmd.exe /k "{activate}"', shell=True)
+        #activate = venv_path / "Scripts" / "activate.bat"
+        #subprocess.Popen(f'start cmd.exe /k "{activate}"', shell=True)
 
-        cmd = f'call "{activate}" && pip install -r requirements.txt && cmd /k'
+        cmd = f'call "{activate}" && pip install -r binder/requirements.txt && cmd /k'
         subprocess.Popen(f'start cmd.exe /k "{cmd}"', shell=True)
         print("dependencies installed in the .venv environment.")
     else:
