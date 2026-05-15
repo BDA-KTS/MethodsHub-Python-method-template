@@ -38,10 +38,7 @@ if env_manager == "pip":
     else:
         venv_python = Path(".venv/bin/python")
     print('Virual environment activated.')
-    subprocess.run(
-        [str(venv_python), "-m", "pip", "install", "-r", "binder/requirements.txt"],
-        check=True
-    )
+    
 
 # -------------------------
 # CONDA setup
