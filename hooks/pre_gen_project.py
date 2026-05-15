@@ -20,7 +20,7 @@ elif env_manager == "pip":
     print("\n Python virtual environment deploying for {{ cookiecutter.method_title }}with pre-installations...")
 
 elif env_manager == "none":
-  print("\n Virtual working environment to be created and deployed for {{ cookiecutter.method_title }} manually...")
+    print("\n Virtual working environment to be created and deployed for {{ cookiecutter.method_title }} manually...")
 
 # -------------------------
 # PIP / venv setup
@@ -34,20 +34,15 @@ if env_manager == "pip":
     print("Virtual environment created (.venv) created for {{ cookiecutter.method_title }}")
 
     if os.name == "nt":
-        venv_python = Path(".venv/Scripts/python.exe")
-        subprocess.run(
-            r'cmd.exe /k ".venv\Scripts\activate.bat"',
-            shell=True
-        )
-
+        activate_cmd = r".venv\Scripts\activate"
     else:
-        venv_python = Path(".venv/bin/python")
-        subprocess.run(
-            'bash -c "source .venv/bin/activate && exec bash"',
-            shell=True
-        )
-    print('Virual environment activated.')
-    
+        activate_cmd = "source .venv/bin/activate"
+
+    print("\nActivate the virtual environment by running:\n")
+    print(f"    {activate_cmd}\n")
+
+    # Wait for user confirmation
+    input("Press ENTER after you have activated the virtual environment...")
 
 # -------------------------
 # CONDA setup
