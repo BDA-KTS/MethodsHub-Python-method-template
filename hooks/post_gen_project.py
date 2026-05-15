@@ -1,6 +1,7 @@
 import subprocess
 import sys
 import os
+from pathlib import Path
 
 env_manager = "{{ cookiecutter.env_manager }}"
 method_slug = "{{ cookiecutter.method_slug }}"
@@ -9,6 +10,8 @@ method_slug = "{{ cookiecutter.method_slug }}"
 # PIP install from requirements.txt
 # ----------------------
 if env_manager == "pip":
+    venv_path = Path(".venv").resolve()
+
     if os.name == "nt":
         activate = venv_path / "Scripts" / "activate.bat"
         subprocess.Popen(f'start cmd.exe /k "{activate}"', shell=True)
