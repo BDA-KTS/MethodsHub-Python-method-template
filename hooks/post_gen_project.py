@@ -8,19 +8,17 @@ method_slug = "{{ cookiecutter.method_slug }}"
 # PIP install from requirements.txt
 # ----------------------
 if env_manager == "pip":
-    
+    if os.name == "nt":
+        activate = venv_path / "Scripts" / "activate.bat"
+        subprocess.Popen(f'start cmd.exe /k "{activate}"', shell=True)
+    else:
+        activate = venv_path / "bin" / "activate"
+        subprocess.Popen(["gnome-terminal","--","bash","-ic",f"source '{activate}' && exec bash"])
+
+    print("Opened new terminal with activated virtual environment.")
+
     print("Installing dependencies for {{ cookiecutter.method_title }} from requirements.txt...")
-    subprocess.run(
-        [
-            sys.executable,
-            "-m",
-            "pip",
-            "install",
-            "-r",
-            "binder/requirements.txt"
-        ],
-        check=True
-    )
+    subprocess.run([sys.executable,"-m","pip","install","-r","binder/requirements.txt"],check=True)
 
     print("Pip dependencies are installed in {{cookiecutter.method_title}}.venv environment.")
     print("Finally, execute the following command to open the virtual environment in the current shell window.\nFor Windows: {{cookiecutter.method_slug}}\\.venv\Scripts\activate.bat\nForLinux or MacOS: source {{ cookiecutter.method_slug }}/.venv/bin/activate")
