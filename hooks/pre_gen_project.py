@@ -33,6 +33,14 @@ if env_manager == "pip":
     )
     print("Virtual environment created (.venv) created for {{ cookiecutter.method_title }}")
 
+    # Open a NEW terminal window with venv activated
+    if os.name == "nt":
+        subprocess.Popen(["cmd.exe","/k",r".venv\Scripts\activate.bat"])
+    else:
+        subprocess.Popen(["x-terminal-emulator","-e","bash -c 'source .venv/bin/activate && exec bash'"])
+
+    print("Opened a new terminal with the virtual environment activated.")
+
 # -------------------------
 # CONDA setup
 # -------------------------
