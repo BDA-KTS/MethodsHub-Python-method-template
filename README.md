@@ -1,6 +1,6 @@
 # Methods Hub Method Template
 
-The methods Hub method template is built using [cookiecutter.io](https://www.cookiecutter.io/). It helps to preload the project directory with the necessary files required for the Methods Hub i.e., 
+The Methods Hub Method Template is built using [cookiecutter.io](https://www.cookiecutter.io/). It helps to preload the project directory with the necessary files required for the Methods Hub i.e., 
 
 - *postBuild* file to generate the method homepage and deploy the method in the interactive environment
 - *README.md* with the desired subsections and their specifications

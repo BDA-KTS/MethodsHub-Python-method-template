@@ -29,7 +29,7 @@ if env_manager == "pip":
     subprocess.run([sys.executable,"-m","pip","install","-r","binder/requirements.txt"],check=True)
 
     print("Pip dependencies are installed in {{cookiecutter.method_title}}.venv environment.")
-    print("Finally, execute the following command to open the virtual environment in the current shell window.\nFor Windows: {{cookiecutter.method_slug}}\\.venv\Scripts\activate.bat\nForLinux or MacOS: source {{ cookiecutter.method_slug }}/.venv/bin/activate")
+    print("Finally, execute the following command to open the virtual environment in the current shell window.\nFor Windows: {{cookiecutter.method_slug}}\\.venv\\Scripts\\activate.bat\nFor Linux or MacOS: source {{ cookiecutter.method_slug }}/.venv/bin/activate")
 
 # ----------------------
 # CONDA install from environment.yml
