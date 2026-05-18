@@ -5,7 +5,7 @@ The Methods Hub Method Template is built using [cookiecutter.io](https://www.coo
 - *postBuild* file to generate the method homepage and deploy the method in the interactive environment
 - *README.md* with the desired subsections and their specifications
 - Within project directory structure having
-  - *Data* for the input and output files
+  - *data* for the input and output files
   - *binder* for the postBuild and environment preserving files
   - *.github* for the GitHub workflows
 - *CITATION.CFF* file for attribution
