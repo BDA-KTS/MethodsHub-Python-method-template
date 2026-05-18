@@ -38,18 +38,17 @@ elif env_manager == "conda":
 
     print("Installing dependencies for {{ cookiecutter.method_title }} from environment.yml...")
 
-    subprocess.run(
-        [
-            "conda",
-            "env",
-            "update",
-            "-n",
-            project_slug,
-            "-f",
-            "binder/environment.yml",
-            "--prune"
-        ],
-        check=True
+    env_name = "{{ cookiecutter.project_slug }}"
+
+    cmd = (
+        f'conda env create -n {env_name} -f binder/environment.yml '
+        f'&& conda activate {env_name} '
+        f'&& cmd /k'
+    )
+
+    subprocess.Popen(
+        f'start cmd.exe /k "{cmd}"',
+        shell=True
     )
 
     print("Conda environment updated.")
