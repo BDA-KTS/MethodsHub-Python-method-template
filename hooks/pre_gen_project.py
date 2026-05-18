@@ -39,14 +39,7 @@ if env_manager == "pip":
 elif env_manager == "conda":
 
     subprocess.run(
-        [
-            "conda",
-            "create",
-            "-y",
-            "-n",
-            {{ cookiecutter.method_slug }},
-            "python"
-        ],
+        ["conda", "create", "-y", "-n", {{ cookiecutter.method_slug }}, "python"],
         check=True
     )
 
