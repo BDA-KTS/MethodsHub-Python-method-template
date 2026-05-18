@@ -38,7 +38,7 @@ elif env_manager == "conda":
 
     print("Installing dependencies for {{ cookiecutter.method_title }} from environment.yml...")
 
-    env_name = "{{ cookiecutter.project_slug }}"
+    env_name = "{{ cookiecutter.method_slug }}"
 
     cmd = (
         f'conda env create -n {env_name} -f binder/environment.yml '
