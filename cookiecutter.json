@@ -4,7 +4,7 @@
   "description": "{{ cookiecutter.method_slug }} allows to do XXX. \n {{ cookiecutter.method_slug }} takes XXX in XXX format as input and provides XXX in XXX format as output.\nAlternatively, {{ cookiecutter.method_slug }} can also be configured to XXX.\n{{ cookiecutter.method_slug }} works with XXX data.\n{{ cookiecutter.method_slug }} can use any [XXX-compatible API](https://example.com).\nThe output of {{ cookiecutter.method_slug }} is compatible with [XXX](https://example.com).\n{{ cookiecutter.method_slug }} placed Xth in the [XXX](https:/example.com) competition on XXX.\n{{ cookiecutter.method_slug }} is much faster than other methods.\n{{ cookiecutter.method_slug }} runs quickly on standard hardware.\n{{cookiecutter.method_slug}} requires a GPU.",
   "usecase": "Doing XXX.\nOne can use {{ cookiecutter.method_slug }} by doing XXX to achieve XXX.\n\nExample publications that illustrate this use case:",
   "authors_info": "firstname, lastname, ORCID|firstname, lastname, ORCID|...",
-  "github_handle": "https://github.com/XXX",
+  "github_repository_owner": "",
   "contact_email": "",
   "release_date": "yyyy-mm-dd",
   "env_manager": ["pip", "conda", "none"]

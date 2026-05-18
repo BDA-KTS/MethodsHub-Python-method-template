@@ -205,4 +205,4 @@ Ensure you follow the [XXX Terms of Service](https://example.com) when using thi
 1. The contact details section should specify whom to contact for questions or contributions and how (can be separate entitites; for example email addresses or links to the GitHub issue board).
 -->
 In case of questions, contact on (mailto:{{ cookiecutter.contact_email }}).
-For contributions and bug reports, open an issue at [{{ cookiecutter.method_title }}](https://github.com/{{ cookiecutter.github_handle }}/{{ cookiecutter.method_slug }}).
+For contributions and bug reports, open an issue at [{{ cookiecutter.method_title }}](https://github.com/{{ cookiecutter.github_repository_owner }}/{{ cookiecutter.method_slug }}).
