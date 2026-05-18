@@ -14,10 +14,10 @@ if env_manager not in ["pip", "conda", "none"]:
 
 # Optional guidance / enforcement logic
 if env_manager == "conda":
-    print("\n Conda is deploying virtual environment for {{ cookiecutter.method_title }}with pre-installations...")
+    print("\n Conda is deploying virtual environment for {{ cookiecutter.method_title }} with pre-installations...")
 
 elif env_manager == "pip":
-    print("\n Python virtual environment deploying for {{ cookiecutter.method_title }}with pre-installations...")
+    print("\n Python virtual environment deploying for {{ cookiecutter.method_title }} with pre-installations...")
 
 elif env_manager == "none":
     print("\n Virtual working environment to be created and deployed for {{ cookiecutter.method_title }} manually...")
