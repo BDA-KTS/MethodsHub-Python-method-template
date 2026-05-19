@@ -1,11 +1,31 @@
 import subprocess
 import sys
 import os
+import shutil
 from pathlib import Path
 
 env_manager = "{{ cookiecutter.env_manager }}"
 method_slug = "{{ cookiecutter.method_slug }}"
 
+# ----------------------
+# PIP install from requirements.txt
+# ----------------------
+license_name = "{{ cookiecutter.license }}"
+mapping = {
+    "MIT License": "licenses/MIT.txt",
+    "Apache-2.0 License": "licenses/Apache-2.0.txt",
+    "GPL-3.0 License": "licenses/GPL-3.0.txt"
+    "BSD-2-clause License"
+    "No License"
+}
+if license_name != "No License":
+    src = Path.cwd().parent / licenses / {{ cookiecutter.license }}
+    dst = Path.cwd() / "LICENSE"
+
+    shutil.copy(src, dst)
+    print(f"Added {license_name} license.")
+else
+    print("You have selected no license option. Please manually add an open license to your method")
 # ----------------------
 # PIP install from requirements.txt
 # ----------------------
