@@ -18,8 +18,12 @@ mapping = {
     "BSD-2-clause License"
     "No License"
 }
+
+HOOK_DIR = Path(__file__).resolve().parent
+TEMPLATE_ROOT = HOOK_DIR.parent
+
 if license_name != "No License":
-    src = Path.cwd().parent / "licenses" / "{{ cookiecutter.license }}"
+    src = TEMPLATE_ROOT / "licenses" / "{{ cookiecutter.license }}"
     dst = Path.cwd() / "LICENSE"
 
     shutil.copy(src, dst)
