@@ -19,7 +19,7 @@ mapping = {
     "No License"
 }
 if license_name != "No License":
-    src = Path.cwd().parent / licenses / {{ cookiecutter.license }}
+    src = Path.cwd().parent / "licenses" / "{{ cookiecutter.license }}"
     dst = Path.cwd() / "LICENSE"
 
     shutil.copy(src, dst)
