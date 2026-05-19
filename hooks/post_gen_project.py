@@ -19,14 +19,11 @@ mapping = {
     "No License"
 }
 
-HOOK_DIR = Path(__file__).resolve().parent
-TEMPLATE_ROOT = HOOK_DIR.parent
-
 if license_name != "No License":
-    src = TEMPLATE_ROOT / "licenses" / "{{ cookiecutter.license }}"
+    src = Path.cwd() / "licenses" / "{{ cookiecutter.license }}"
     dst = Path.cwd() / "LICENSE"
-
     shutil.copy(src, dst)
+    shutil.rmtree(Path.cwd() / "licenses")
     print(f"Added {license_name} license.")
 else:
     print("You have selected no license option. Please manually add an open license to your method")
