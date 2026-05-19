@@ -7,7 +7,7 @@ author:
 - first_name: {{ parts[0].strip() }}
 - last_name: {{ parts[1].strip() }}
 {% if parts|length > 2 and parts[2].strip() %}
-- ORCID: {{ parts[2].strip.() }}
+- ORCID: {{ parts[2].strip() }}
 {% endfor %}
 title: {{ cookiecutter.method_title }}
 version: 1.0
