@@ -9,7 +9,7 @@
     "GPL-3.0 License",
     "BSD-2-clause License",
     "No License"
-  ]
+  ],
   "contact_email": "",
   "release_date": "yyyy-mm-dd",
   "env_manager": ["pip", "conda", "none"]
