@@ -1,6 +1,6 @@
 {
   "method_title": "Methods Hub method title",
-  "method_slug": "Your method folder name is: {{ cookiecutter.method_title.lower().replace(' ', '_') }}",
+  "method_slug": "{{ cookiecutter.method_title.lower().replace(' ', '_') }}",
   "authors_info": "firstname, lastname, ORCID (leave ORCID empty if not available)|...",
   "github_repository_owner": "",
   "license": [
