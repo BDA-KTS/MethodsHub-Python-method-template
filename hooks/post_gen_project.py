@@ -51,6 +51,7 @@ if env_manager == "pip":
     print("Pip dependencies are installed in {{cookiecutter.method_title}}.venv environment.")
     print("Finally, execute the following command to open the virtual environment in the current shell window.\nFor Windows: {{cookiecutter.method_slug}}\\.venv\\Scripts\\activate.bat\nFor Linux or MacOS: source {{ cookiecutter.method_slug }}/.venv/bin/activate")
 
+    print("You can start working on your method now. \nAfter completion, go back to the template README 'How To Use' section to complete the remaining steps for pushing the method to your GitHub account.")
 # ----------------------
 # CONDA install from environment.yml
 # ----------------------
