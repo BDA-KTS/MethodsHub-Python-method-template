@@ -24,7 +24,7 @@ if license_name != "No License":
 
     shutil.copy(src, dst)
     print(f"Added {license_name} license.")
-else
+else:
     print("You have selected no license option. Please manually add an open license to your method")
 # ----------------------
 # PIP install from requirements.txt
