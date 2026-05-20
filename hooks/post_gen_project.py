@@ -18,9 +18,9 @@ if license_name != "No License":
     dst = Path.cwd() / "LICENSE"
     shutil.copy(src, dst)
     shutil.rmtree(Path.cwd() / "licenses")
-    license_message = '{{"{{cookiecutter.license}}"}} is added as {{"{{ cookiecutter.method_slug }}"}}/LICENSE.' 
+    license_message = "{{cookiecutter.license}} is added as {{ cookiecutter.method_slug }}/LICENSE" 
 else:
-    license_message = 'You have selected the {{"{{ cookiecutter.license }}"}} option. Please add an open license to your method when ready.'
+    license_message = 'You have selected the {{ cookiecutter.license }} option. Please add an open license to your method when ready.'
 
 # ----------------------
 # PIP install from requirements.txt
@@ -35,12 +35,12 @@ if env_manager == "pip":
         cmd = (
             f'call "{activate}" &&'
             f'pip install -r binder/requirements.txt &&' 
-            f'echo "{{ cookiecutter.method_slug }}"/.venv created and activated &&'
-            f'echo dependencies from "{{ cookiecutter.method_slug }}"/binder/requirements.txt are installed &&'
-            f'echo "{{ cookiecutter.method_title }}", "{{ cookiecutter.authors_info }}", and "{{ cookiecutter.release_date }}" are updated in "{{ cookiecutter.method_slug }}"/CITATION.CFF file &&'
-            f'echo "{{ cookiecutter.method_title }}" and Contact details section (with "{{ cookiecutter.authors_info }}", "{{ cookiecutter.contact_email }}", and "{{ cookiecutter.github_repository_owner }}") are updated in "{{ cookiecutter.method_slug }}"/README.md &&'
+            f'echo - {{ cookiecutter.method_slug }}/.venv created and activated &&'
+            f'echo - dependencies from {{ cookiecutter.method_slug }}/binder/requirements.txt are installed &&'
+            f'echo - {{ cookiecutter.method_title }}, {{ cookiecutter.authors_info }}, and {{ cookiecutter.release_date }} are updated in {{ cookiecutter.method_slug }}/CITATION.CFF file &&'
+            f'echo - {{ cookiecutter.method_title }} and Contact details section (with {{ cookiecutter.authors_info }}, {{ cookiecutter.contact_email }}, and {{ cookiecutter.github_repository_owner }}) are updated in {{ cookiecutter.method_slug }}/README.md &&'
             f'echo "{license_message}" &&'
-            f'Setup is done, Yay 🎉 \nnow grab a coffee ☕, and develop your method. \nGood Luck &&'
+            f'Setup is done, Yay 🎉 now grab a coffee ☕, and develop your method. Good Luck &&'
             f'cmd /k'
         )
         subprocess.Popen(f'start cmd.exe /k "{cmd}"', shell=True)
