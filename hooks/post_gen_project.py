@@ -12,20 +12,11 @@ method_slug = "{{ cookiecutter.method_slug }}"
 # Add an open license
 # ----------------------
 license_name = "{{ cookiecutter.license }}"
-mapping = {
-    "MIT License": "licenses/MIT.txt",
-    "Apache-2.0 License": "licenses/Apache-2.0.txt",
-    "GPL-3.0 License": "licenses/GPL-3.0.txt"
-    "BSD-2-clause License"
-    "No License"
-}
-
 if license_name != "No License":
     src = Path.cwd() / "licenses" / "{{ cookiecutter.license }}"
     dst = Path.cwd() / "LICENSE"
     shutil.copy(src, dst)
     shutil.rmtree(Path.cwd() / "licenses")
-    print(f"Added {license_name} license.")
 else:
     print("You have selected no license option. Please manually add an open license to your method")
 
@@ -47,6 +38,7 @@ if env_manager == "pip":
             f'echo {{ cookiecutter.license }} added to the {{cookiecutter.method_slug}} directory &&'
             f'echo {{ cookiecutter.method_title }}, {{ cookiecutter.authors_info }}, and {{ cookiecutter.release_date }} are updated in {{ cookiecutter.method_slug }}/CITATION.CFF file &&'
             f'echo Method title as {{ cookiecutter.method_title }}, and Contact details section (with {{ cookiecutter.authors_info }}, {{ cookiecutter.contact_email }}, and {{ cookiecutter.github_repository_owner }}) are updated in {{ cookiecutter.method_slug }}/READ.md &&'
+            f'{"echo {{ cookiecutter.license }} add as {{cookiecutter.method_slug}}/LICENSE " if {{cookiecutter.license}} != "No License" else "echo You have selected the 'No License' option. Please add an open license to {{cookiecutter.method_slug}}/ manually, when ready."}'
             f'Setup is done, Yay 🎉 \nnow grab a coffee and develop your method. \nGood Luck &&'
             'cmd /k')
         subprocess.Popen(f'start cmd.exe /k "{cmd}"', shell=True)
