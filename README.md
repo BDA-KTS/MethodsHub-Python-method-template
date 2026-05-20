@@ -1,6 +1,6 @@
 # Methods Hub Method Template
 
-The Methods Hub Method Template is built using [cookiecutter.io](https://www.cookiecutter.io/). It helps to preload the project directory with the necessary files required for the Methods Hub i.e., 
+The Methods Hub Method Template is built using [Cookiecutter](https://github.com/cookiecutter/cookiecutter). It helps to preload the project directory with the necessary files required for the Methods Hub i.e., 
 
 - *postBuild* file to generate the method homepage and deploy the method in the interactive environment
 - *README.md* with the desired subsections and their specifications
@@ -14,12 +14,12 @@ The Methods Hub Method Template is built using [cookiecutter.io](https://www.coo
 
 ## How to Use
 
-- Install cookiecutter
+- Install Cookiecutter
   - With uv: `uv tool install cookiecutter`
   - With pip: `python3 -m pip install --user cookiecutter`
   - With Anaconda: `conda install cookiecutter`
-- Check cookiecutter version: `cookiecutter --version`
-- Get Python method template with cookiecutter: `cookiecutter https://github.com/BDA-KTS/MethodsHub-method-template.git`
+- Check Cookiecutter version: `cookiecutter --version`
+- Get Python method template with Cookiecutter: `cookiecutter https://github.com/BDA-KTS/MethodsHub-method-template.git`
 
 *It internally uses git clone to clone the template repository locally while setting specific configurations for the method.*
   - **Note:** You will be asked for the method configurations e.g.., *method_title*, *method_slug* (if name has spaces) etc.
