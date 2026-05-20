@@ -4,6 +4,7 @@ import os
 import shutil
 from pathlib import Path
 import platform
+import venv
 
 env_manager = "{{ cookiecutter.env_manager }}"
 method_slug = "{{ cookiecutter.method_slug }}"
@@ -49,6 +50,9 @@ if env_manager == "pip":
         subprocess.Popen(f'start cmd.exe /k "{cmd}"', shell=True)
     else:
         venv_python = venv_path / "bin" / "python"
+        if not venv_python.exists():
+            venv.EnvBuilder(with_pip=True).create(venv_path)
+        subprocess.run([str(venv_python), "-m", "pip", "install", "--upgrade", "pip"], check=True)
         subprocess.run([str(venv_python), "-m", "pip", "install", "-r", "binder/requirements.txt"], check=True)
 
         activate = venv_path / "bin" / "activate"
@@ -61,7 +65,8 @@ if env_manager == "pip":
         print(' - "{license_message}"')
         print(' - Setup is done, Yay 🎉 now grab a coffee ☕, and develop your method. Good Luck')
         print('-----------------------------------------------------------------')
-        print('Execute "' + str(activate) + '" to activate your method\'s .venv environment')
+        print('Oh 1 more step! Execute the following command to activate {{cookiecutter.method_slug}}/.venv environment')
+        print('source ' + str(activate) + '"')
 
     file_path = Path.cwd() / "binder" / "environment.yml"
     if file_path.exists():
