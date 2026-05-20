@@ -12,16 +12,6 @@ if env_manager not in ["pip", "conda", "none"]:
     print("Invalid environment manager selected.")
     sys.exit(1)
 
-# Optional guidance / enforcement logic
-if env_manager == "conda":
-    print("\n Conda is deploying virtual environment for {{ cookiecutter.method_title }} with pre-installations...")
-
-elif env_manager == "pip":
-    print("\n Python virtual environment deploying for {{ cookiecutter.method_title }} with pre-installations...")
-
-elif env_manager == "none":
-    print("\n Virtual working environment to be created and deployed for {{ cookiecutter.method_title }} manually...")
-
 # -------------------------
 # PIP / venv setup
 # -------------------------
@@ -31,7 +21,7 @@ if env_manager == "pip":
         [sys.executable, "-m", "venv", ".venv"],
         check=True
     )
-    print("Virtual environment created (.venv) created for {{ cookiecutter.method_title }}")
+    print("Pip created {{ cookiecutter.method_slug }}/.venv virtual environment")
 
 # -------------------------
 # CONDA setup
