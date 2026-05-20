@@ -28,14 +28,15 @@ else:
 if env_manager == "pip":
     venv_path = Path(".venv").resolve()
 
-    print("Opening new terminal for new virtual environment.")
+    print("Opening new terminal...")
     if os.name == "nt":
         activate = venv_path / "Scripts" / "activate.bat"
         #subprocess.Popen(f'start cmd.exe /k "{activate}"', shell=True)
         cmd = (
             f'call "{activate}" &&'
             f'pip install -r binder/requirements.txt &&'
-            
+
+            f'echo {{"{{ cookiecutter.method_slug }}"}}/.venv activated &&'
             f'echo {{"{{ cookiecutter.method_slug }}"}}/.venv environment created &&'
             f'echo dependencies from {{"{{ cookiecutter.method_slug }}"}}/binder/requirements.txt are installed &&'
             f'echo {{"{{ cookiecutter.method_title }}"}}, {{"{{ cookiecutter.authors_info }}"}}, and {{"{{ cookiecutter.release_date }}"}} are updated in {{"{{ cookiecutter.method_slug }}"}}/CITATION.CFF file &&'
