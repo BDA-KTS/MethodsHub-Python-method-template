@@ -31,6 +31,7 @@ if env_manager == "pip":
         activate = venv_path / "Scripts" / "activate.bat"
         #subprocess.Popen(f'start cmd.exe /k "{activate}"', shell=True)
         license_choice = {{ cookiecutter.license }}
+        license_choice = str(license_choice)
         cmd = (
             f'call "{activate}" && pip install -r binder/requirements.txt &&'
             f'echo {{ cookiecutter.method_slug }}/.venv environment created &&'
