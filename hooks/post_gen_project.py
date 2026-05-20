@@ -36,6 +36,7 @@ if env_manager == "pip":
             f'call "{activate}" &&'
             f'pip install -r binder/requirements.txt &&' 
             f'echo -------------------------------------------------------------- &&'
+            f'echo -                        Process Update                        &&'
             f'echo - {{ cookiecutter.method_slug }}/.venv created and activated &&'
             f'echo - dependencies from {{ cookiecutter.method_slug }}/binder/requirements.txt are installed &&'
             f'echo - {{ cookiecutter.method_title }}, {{ cookiecutter.authors_info }}, and {{ cookiecutter.release_date }} are updated in {{ cookiecutter.method_slug }}/CITATION.CFF file &&'
@@ -52,6 +53,7 @@ if env_manager == "pip":
 
         activate = venv_path / "bin" / "activate"
         print('--------------------------------------------------------------')
+        print('                              Process Update                  ')
         print(' - {{ cookiecutter.method_slug }}/.venv created and activated')
         print(' - dependencies from {{ cookiecutter.method_slug }}/binder/requirements.txt are installed')
         print(' - {{ cookiecutter.method_title }}, {{ cookiecutter.authors_info }}, and {{ cookiecutter.release_date }} are updated in {{ cookiecutter.method_slug }}/CITATION.CFF file')
@@ -59,7 +61,7 @@ if env_manager == "pip":
         print(' - "{license_message}"')
         print(' - Setup is done, Yay 🎉 now grab a coffee ☕, and develop your method. Good Luck')
         print('-----------------------------------------------------------------')
-        print('Execute "{activate}" to activate .venv')
+        print('Execute "' + activate + '" to activate your method\'s .venv environment')
 
     file_path = Path.cwd() / "binder" / "environment.yml"
     if file_path.exists():
