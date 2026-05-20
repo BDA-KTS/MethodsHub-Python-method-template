@@ -38,6 +38,10 @@ if env_manager == "pip":
     print("Virtual environment {{ cookiecutter.method_slug }}/.venv created.")
     
     print("Installing dependencies for {{ cookiecutter.method_title }} method from {{ cookiecutter.method_slug }}/binder/requirements.txt into {{ cookiecutter.method_slug }}/.venv")
+    
+    file_path = Path.cwd() / "binder" / "environment.yml"
+    if file_path.exists():
+        file_path.unlink()
     #subprocess.run([sys.executable,"-m","pip","install","-r","binder/requirements.txt"],check=True)
 
 # ----------------------
