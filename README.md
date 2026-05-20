@@ -19,6 +19,14 @@ The Methods Hub Method Template is built using [Cookiecutter](https://github.com
   - With pip: `python3 -m pip install --user cookiecutter`
   - With Anaconda: `conda install cookiecutter`
 - Check Cookiecutter version: `cookiecutter --version`
+  - if not found on Linux/MacOS
+    - echo $SHELL
+    - for `/bin/bash`:
+      - `echo 'export PATH="$HOME/.local/bin:PATH"' >> ~/.bashrc`
+      - `source ~/.bashrc`
+    - for `/bash/zsh`:
+      - `echo 'export PATH="$HOME/.local/bin:PATH"' >> ~/.zshrc`
+      - `source ~/.zshrc`
 - Get Python method template with Cookiecutter: `cookiecutter https://github.com/BDA-KTS/MethodsHub-method-template.git`
 
 *It internally uses git clone to clone the template repository locally while setting specific configurations for the method.*
