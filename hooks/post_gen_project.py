@@ -38,7 +38,7 @@ if env_manager == "pip":
             f'echo {{ cookiecutter.license }} added to the {{cookiecutter.method_slug}} directory &&'
             f'echo {{ cookiecutter.method_title }}, {{ cookiecutter.authors_info }}, and {{ cookiecutter.release_date }} are updated in {{ cookiecutter.method_slug }}/CITATION.CFF file &&'
             f'echo Method title as {{ cookiecutter.method_title }}, and Contact details section (with {{ cookiecutter.authors_info }}, {{ cookiecutter.contact_email }}, and {{ cookiecutter.github_repository_owner }}) are updated in {{ cookiecutter.method_slug }}/READ.md &&'
-            f'{"echo {{ cookiecutter.license }} add as {{cookiecutter.method_slug}}/LICENSE " if {{cookiecutter.license}} != "No License" else "echo You have selected the 'No License' option. Please add an open license to {{cookiecutter.method_slug}}/ manually, when ready."}'
+            f'{"echo {{ cookiecutter.license }} add as {{cookiecutter.method_slug}}/LICENSE " if str({{cookiecutter.license}}) != "No License" else "echo You have selected the 'No License' option. Please add an open license to {{cookiecutter.method_slug}}/ manually, when ready."}'
             f'Setup is done, Yay 🎉 \nnow grab a coffee and develop your method. \nGood Luck &&'
             'cmd /k')
         subprocess.Popen(f'start cmd.exe /k "{cmd}"', shell=True)
