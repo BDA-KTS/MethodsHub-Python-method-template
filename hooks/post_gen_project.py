@@ -9,6 +9,27 @@ env_manager = "{{ cookiecutter.env_manager }}"
 method_slug = "{{ cookiecutter.method_slug }}"
 
 # ----------------------
+# Add an open license
+# ----------------------
+license_name = "{{ cookiecutter.license }}"
+mapping = {
+    "MIT License": "licenses/MIT.txt",
+    "Apache-2.0 License": "licenses/Apache-2.0.txt",
+    "GPL-3.0 License": "licenses/GPL-3.0.txt"
+    "BSD-2-clause License"
+    "No License"
+}
+
+if license_name != "No License":
+    src = Path.cwd() / "licenses" / "{{ cookiecutter.license }}"
+    dst = Path.cwd() / "LICENSE"
+    shutil.copy(src, dst)
+    shutil.rmtree(Path.cwd() / "licenses")
+    print(f"Added {license_name} license.")
+else:
+    print("You have selected no license option. Please manually add an open license to your method")
+
+# ----------------------
 # PIP install from requirements.txt
 # ----------------------
 if env_manager == "pip":
@@ -19,7 +40,15 @@ if env_manager == "pip":
         activate = venv_path / "Scripts" / "activate.bat"
         #subprocess.Popen(f'start cmd.exe /k "{activate}"', shell=True)
 
-        cmd = f'call "{activate}" && pip install -r binder/requirements.txt && cmd /k'
+        cmd = (
+            f'call "{activate}" && pip install -r binder/requirements.txt &&'
+            f'echo {{ cookiecutter.method_slug }}/.venv environment created &&'
+            f'echo dependencies from {{ cookiecutter.method_slug }}/binder/requirements.txt are installed &&'
+            f'echo {{ cookiecutter.license }} added to the {{cookiecutter.method_slug}} directory &&'
+            f'echo {{ cookiecutter.method_title }}, {{ cookiecutter.authors_info }}, and {{ cookiecutter.release_date }} are updated in {{ cookiecutter.method_slug }}/CITATION.CFF file &&'
+            f'echo Method title as {{ cookiecutter.method_title }}, and Contact details section (with {{ cookiecutter.authors_info }}, {{ cookiecutter.contact_email }}, and {{ cookiecutter.github_repository_owner }}) are updated in {{ cookiecutter.method_slug }}/READ.md &&'
+            f'Setup is done, Yay 🎉 \nnow grab a coffee and develop your method. \nGood Luck &&'
+            'cmd /k')
         subprocess.Popen(f'start cmd.exe /k "{cmd}"', shell=True)
     else:
         venv_python = venv_path / "bin" / "python"
@@ -65,30 +94,3 @@ elif env_manager == "conda":
     )
 
     print("Conda environment updated.")
-
-# ----------------------
-# Add an open license
-# ----------------------
-license_name = "{{ cookiecutter.license }}"
-mapping = {
-    "MIT License": "licenses/MIT.txt",
-    "Apache-2.0 License": "licenses/Apache-2.0.txt",
-    "GPL-3.0 License": "licenses/GPL-3.0.txt"
-    "BSD-2-clause License"
-    "No License"
-}
-
-if license_name != "No License":
-    src = Path.cwd() / "licenses" / "{{ cookiecutter.license }}"
-    dst = Path.cwd() / "LICENSE"
-    shutil.copy(src, dst)
-    shutil.rmtree(Path.cwd() / "licenses")
-    print(f"Added {license_name} license.")
-else:
-    print("You have selected no license option. Please manually add an open license to your method")
-
-print("Method folder created with the name {{ cookiecutter.method_slug }}, with directory structure and mandatory files.")
-
-print("{{cookiecutter.method_title}} and contact details section are updated on README with the information provided.")
-
-print("{{ cookiecutter.method_title }}, {{ cookiecutter.authors_info }}, and {{ cookiecutter.release_date }} are updated in CITATION.CFF file.")
