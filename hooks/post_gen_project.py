@@ -61,7 +61,7 @@ if env_manager == "pip":
         print(' - "{license_message}"')
         print(' - Setup is done, Yay 🎉 now grab a coffee ☕, and develop your method. Good Luck')
         print('-----------------------------------------------------------------')
-        print('Execute "' + activate + '" to activate your method\'s .venv environment')
+        print('Execute "' + str(activate) + '" to activate your method\'s .venv environment')
 
     file_path = Path.cwd() / "binder" / "environment.yml"
     if file_path.exists():
