@@ -37,6 +37,7 @@ if env_manager == "pip":
             f'pip install -r binder/requirements.txt &&' 
             f'echo "{{ cookiecutter.method_slug }}"/.venv activated &&'
             f'cmd /k'
+        )
         subprocess.Popen(f'start cmd.exe /k "{cmd}"', shell=True)
     else:
         venv_python = venv_path / "bin" / "python"
