@@ -51,30 +51,16 @@ if env_manager == "pip":
         subprocess.run([str(venv_python), "-m", "pip", "install", "-r", "binder/requirements.txt"], check=True)
 
         activate = venv_path / "bin" / "activate"
-        cmd = (
-            f'source "{activate}" &&'
-            f'echo -------------------------------------------------------------- &&'
-            f'echo - {{ cookiecutter.method_slug }}/.venv created and activated &&'
-            f'echo - dependencies from {{ cookiecutter.method_slug }}/binder/requirements.txt are installed &&'
-            f'echo - {{ cookiecutter.method_title }}, {{ cookiecutter.authors_info }}, and {{ cookiecutter.release_date }} are updated in {{ cookiecutter.method_slug }}/CITATION.CFF file &&'
-            f'echo - {{ cookiecutter.method_title }} and Contact details section (with {{ cookiecutter.authors_info }}, {{ cookiecutter.contact_email }}, and {{ cookiecutter.github_repository_owner }}) are updated in {{ cookiecutter.method_slug }}/README.md &&'
-            f'echo - "{license_message}" &&'
-            f'echo - Setup is done, Yay 🎉 now grab a coffee ☕, and develop your method. Good Luck &&'
-            f'echo --------------------------------------------------------------- &&'
-            f'exec bash'
-        )
-        
-        if platform.system() == "Linux":
-            subprocess.Popen(["gnome-terminal", "--", "bash", "-ic", cmd])
-        elif system == "Darwin":  # macOS
-            subprocess.Popen(["osascript", "-e", f'tell application "Terminal" to do script "{cmd}"'])
-        #activate = venv_path / "bin" / "activate"
-        #subprocess.Popen(["gnome-terminal","--","bash","-ic",f"source '{activate}' && exec bash"])
-    
-    print("Virtual environment {{ cookiecutter.method_slug }}/.venv created.")
-    
-    print("Installing dependencies for {{ cookiecutter.method_title }} method from {{ cookiecutter.method_slug }}/binder/requirements.txt into {{ cookiecutter.method_slug }}/.venv")
-    
+        print('--------------------------------------------------------------')
+        print(' - {{ cookiecutter.method_slug }}/.venv created and activated')
+        print(' - dependencies from {{ cookiecutter.method_slug }}/binder/requirements.txt are installed')
+        print(' - {{ cookiecutter.method_title }}, {{ cookiecutter.authors_info }}, and {{ cookiecutter.release_date }} are updated in {{ cookiecutter.method_slug }}/CITATION.CFF file')
+        print(' - {{ cookiecutter.method_title }} and Contact details section (with {{ cookiecutter.authors_info }}, {{ cookiecutter.contact_email }}, and {{ cookiecutter.github_repository_owner }}) are updated in {{ cookiecutter.method_slug }}/README.md')
+        print(' - "{license_message}"')
+        print(' - Setup is done, Yay 🎉 now grab a coffee ☕, and develop your method. Good Luck')
+        print('-----------------------------------------------------------------')
+        print('Execute "{activate}" to activate .venv')
+
     file_path = Path.cwd() / "binder" / "environment.yml"
     if file_path.exists():
         file_path.unlink()
