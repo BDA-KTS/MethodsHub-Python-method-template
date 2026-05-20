@@ -32,7 +32,11 @@ if env_manager == "pip":
     if os.name == "nt":
         activate = venv_path / "Scripts" / "activate.bat"
         #subprocess.Popen(f'start cmd.exe /k "{activate}"', shell=True)
-        cmd = f'call "{activate}" && pip install -r binder/requirements.txt && cmd /k'
+        cmd = (
+            f'call "{activate}" &&'
+            f'pip install -r binder/requirements.txt &&' 
+            f'echo "{{ cookiecutter.method_slug }}"/.venv activated &&'
+            f'cmd /k'
         subprocess.Popen(f'start cmd.exe /k "{cmd}"', shell=True)
     else:
         venv_python = venv_path / "bin" / "python"
