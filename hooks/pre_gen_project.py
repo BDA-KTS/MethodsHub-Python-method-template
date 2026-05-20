@@ -3,12 +3,6 @@ import os
 import subprocess
 from pathlib import Path
 
-print("Method folder created with the name {{ cookiecutter.method_slug }}, with directory structure and mandatory files.")
-
-print("{{cookiecutter.method_title}} and contact details section are updated on README with the information provided.")
-
-print("{{ cookiecutter.method_title }}, {{ cookiecutter.authors_info }}, and {{ cookiecutter.release_date }} are updated in CITATION.CFF file.")
-
 env_manager = "{{ cookiecutter.env_manager }}"
 
 print(f"Selected environment manager: {env_manager}")
