@@ -35,15 +35,11 @@ if env_manager == "pip":
         #activate = venv_path / "bin" / "activate"
         #subprocess.Popen(["gnome-terminal","--","bash","-ic",f"source '{activate}' && exec bash"])
     
-    print("Virtual environment .venv created and existing dependencies from {{ cookiecutter.method_slug }}/binder/requirements.txt are installed.")
+    print("Virtual environment {{ cookiecutter.method_slug }}/.venv created.")
     
-    print("Installing dependencies for {{ cookiecutter.method_title }} from requirements.txt...")
-    subprocess.run([sys.executable,"-m","pip","install","-r","binder/requirements.txt"],check=True)
+    print("Installing dependencies for {{ cookiecutter.method_title }} method from {{ cookiecutter.method_slug }}/binder/requirements.txt into {{ cookiecutter.method_slug }}/.venv")
+    #subprocess.run([sys.executable,"-m","pip","install","-r","binder/requirements.txt"],check=True)
 
-    print("Pip dependencies are installed in {{cookiecutter.method_title}}.venv environment.")
-    print("Finally, execute the following command to open the virtual environment in the current shell window.\nFor Windows: {{cookiecutter.method_slug}}\\.venv\\Scripts\\activate.bat\nFor Linux or MacOS: source {{ cookiecutter.method_slug }}/.venv/bin/activate")
-
-    print("You can start working on your method now. \nAfter completion, go back to the template README 'How To Use' section to complete the remaining steps for pushing the method to your GitHub account.")
 # ----------------------
 # CONDA install from environment.yml
 # ----------------------
