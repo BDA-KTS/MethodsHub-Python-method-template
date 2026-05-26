@@ -14,11 +14,11 @@ The Methods Hub Method Template is built using [Cookiecutter](https://github.com
 
 ## How to Use
 
-1 Install Cookiecutter
+1. Install Cookiecutter
   - With uv: `uv tool install cookiecutter`
   - With pip: `python3 -m pip install --user cookiecutter`
   - With Anaconda: `conda install cookiecutter`
-2 Check Cookiecutter version: `cookiecutter --version`
+2. Check Cookiecutter version: `cookiecutter --version`
   - if not found on Linux/MacOS
     - echo $SHELL
     - for `/bin/bash`:
@@ -27,9 +27,9 @@ The Methods Hub Method Template is built using [Cookiecutter](https://github.com
     - for `/bash/zsh`:
       - `echo 'export PATH="$HOME/.local/bin:PATH"' >> ~/.zshrc`
       - `source ~/.zshrc`
-3 Get Python method template with Cookiecutter: `cookiecutter https://github.com/BDA-KTS/MethodsHub-method-template.git`
-4 Work on your method locally, until ready
-5 Upload to GitHub
+3. Get Python method template with Cookiecutter: `cookiecutter https://github.com/BDA-KTS/MethodsHub-method-template.git`
+4. Work on your method locally, until ready
+5. Upload to GitHub
   - Create a GitHub repository providing required details and make it public
   - In your terminal in the method directory
     - `git init`
